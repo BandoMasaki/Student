@@ -14,14 +14,13 @@
 <body>
   <div id="container" style="height: 100%;"></div>
   <script>
-    // ▼ご自身のGASのURLに書き換えてください
+    // ▼ご自身のGASのURL（末尾が /exec のもの）に書き換えてください
     const GAS_URL = "https://script.google.com/macros/s/AKfycbzV5yaXGO0Kc62SZxvZqU6khUpM67QVSaspb8VG7g0S9lyOc-2crAw_Jbd2o9oaMNQR/exec";
     const params = new URLSearchParams(window.location.search);
 
-    // ★トークンが無い場合は管理画面へ、ある場合はそのクラスへアクセス
     const targetUrl = GAS_URL + window.location.search;
     
-    // ★ここに allow="clipboard-write" を追加することでコピー機能が解禁されます
+    // allow="clipboard-write" を追加してコピー機能を許可
     document.getElementById("container").innerHTML = 
       `<iframe src="${targetUrl}" allow="clipboard-write"></iframe>`;
   </script>
