@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>受講生管理システム</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    iframe { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="gas-frame"></iframe>
+  <script>
+    // あなたのGASの公開URL（末尾 /exec）をここに貼る
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbzV5yaXGO0Kc62SZxvZqU6khUpM67QVSaspb8VG7g0S9lyOc-2crAw_Jbd2o9oaMNQR/exec";
+    // URLの ?token=〇〇 をそのままGAS側へ引き継ぐ
+    const params = window.location.search;
+    document.getElementById("gas-frame").src = GAS_URL + params;
+  </script>
+</body>
+</html>
